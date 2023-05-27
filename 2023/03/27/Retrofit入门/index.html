@@ -24,7 +24,7 @@
 <meta property="og:description" content="因为原理跟 okhttp 有关就不讲了，这里就只讲一些工作方式，以及一些 bug">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-27T14:57:03.000Z">
-<meta property="article:modified_time" content="2023-03-27T15:31:21.436Z">
+<meta property="article:modified_time" content="2023-05-27T07:59:05.576Z">
 <meta property="article:author" content="Liz">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -292,7 +292,7 @@
 <p>毫无疑问首先我们要创建 Retrofit 实例和上一步创建的 Api 接口实例，例如</p>
 <p>private Retrofit mRetrofit; private Api mApi;</p>
 <p>然后将这个 Retrofit 实例与 url 绑定</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">mRetrofit=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Retrofit</span>.Builder()<br>    .baseUrl(<span class="hljs-string">&quot;http://43.138.61.49:8899/api/v1/&quot;</span>)                <br>    .addConverterFactory(GsonConverterFactory.create())<br>    .build();<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">mRetrofit=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Retrofit</span>.Builder()<br>    .baseUrl(<span class="hljs-string">&quot;xxx&quot;</span>)                <br>    .addConverterFactory(GsonConverterFactory.create())<br>    .build();<br></code></pre></td></tr></table></figure>
 <p>第一行代码中的 baseUrl 是这个网络请求中需要链接的 url，一般是服务器地址，第二行代码是用于把返回的 json 信息解码为我们创建的 SIgnInResult 类对象。</p>
 <p>然后通过这个 Retrofit 实例给 Api 接口实例赋值</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">mApi=mRetrofit.create(Api.class);<br></code></pre></td></tr></table></figure>
